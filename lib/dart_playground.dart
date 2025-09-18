@@ -65,6 +65,33 @@ void tiposDeDados() {
   //TODO: Funcoes
   print(media(10, 0, 10, 0, algoritmo: mediaAritmetica));
   print(media(10, 0, 10, 0, algoritmo: mediaPonderada));
+
+  final multiplier = (int x, int y) {
+    return x * y;
+  };
+
+  final dobro = (int x) => multiplier(x, 2);
+
+  print('dobro: tipo: ${dobro.runtimeType}');
+
+  Botao botao = Botao(label: "Enviar", callBack: () {});
+
+  String getFullname(String nome, String sobrenome, [String? titulo]) {
+    if (titulo != null) {
+      return "$titulo $nome $sobrenome";
+    }
+    return "$nome $sobrenome";
+  }
+
+  print(getFullname("Esdras", "Silva"));
+
+  bool isValueInInterval({required int value, int min = 0, int max = 10}) {
+    return value >= min && value <= max;
+  }
+
+  print(isValueInInterval(value: 10));
+  print(isValueInInterval(max: 100, value: 50, min: 10));
+  print(isValueInInterval(min: 20, max: 100, value: 60));
 }
 
 double mediaAritmetica(int a, int b, int c, int d) {
@@ -77,4 +104,27 @@ double mediaPonderada(int a, int b, int c, int d) {
 
 double media(int a, int b, int c, int d, {required Function algoritmo}) {
   return algoritmo(a, b, c, d);
+}
+
+class FormularioCadastro {
+  String nome;
+  Botao botao;
+  Function onSubmit;
+
+  FormularioCadastro({
+    required this.nome,
+    required this.botao,
+    required this.onSubmit,
+  });
+}
+
+class Botao {
+  String label;
+  Function callBack;
+
+  Botao({required this.label, required this.callBack});
+
+  void onClick() {
+    callBack();
+  }
 }
