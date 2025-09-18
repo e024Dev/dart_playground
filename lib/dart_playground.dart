@@ -128,3 +128,7 @@ class Botao {
     callBack();
   }
 }
+
+void poo() {
+  
+}
