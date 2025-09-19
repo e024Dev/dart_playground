@@ -48,12 +48,9 @@ class User {
     }
     _password = password;
   }
-
-  //Computed Property
-  String get guiPassword => '*' * (_password?.length ?? 1);
-
+  
   @override
   String toString() {
-    return 'User{id: $_id, username: $_username, password: $guiPassword}';
+    return 'User{id: $_id, username: $_username}';
   }
 }
