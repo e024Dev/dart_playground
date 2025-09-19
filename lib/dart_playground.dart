@@ -1,4 +1,5 @@
-import 'package:dart_playground/poo/User.dart';
+import 'package:dart_playground/poo/User.dart' hide Moderator;
+import 'package:dart_playground/poo/user.dart' hide DefaultUser;
 
 /// Comentário de documentação.
 /// A função serve simplistem para demosntrar como funciona o comentário de documentação.
@@ -132,8 +133,9 @@ class Botao {
 }
 
 void poo() {
-  User user = User(id: 42, username: 'esdras', password: '123edc');
+  final user = DefaultUser(id: 42, username: 'esdras', password: '123edc');
   print(user);
-  final anonimo = User.anonimo();
+  final anonimo = DefaultUser.anonimo();
   print(anonimo);
+  final moderator = Moderator(id: 43, username: 'moderator', password: '123edc');
 }
