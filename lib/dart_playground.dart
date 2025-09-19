@@ -132,7 +132,7 @@ class Botao {
 }
 
 void poo() {
-  User user = User(id: 42, username: 'esdras');
+  User user = User(id: 42, username: 'esdras', password: '123edc');
   print(user);
   final anonimo = User.anonimo();
   print(anonimo);
