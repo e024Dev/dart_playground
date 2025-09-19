@@ -1,3 +1,5 @@
+import 'package:dart_playground/poo/User.dart';
+
 /// Comentário de documentação.
 /// A função serve simplistem para demosntrar como funciona o comentário de documentação.
 void tiposDeDados() {
@@ -130,5 +132,8 @@ class Botao {
 }
 
 void poo() {
-  
+  User user = User(id: 42, username: 'esdras');
+  print(user);
+  final anonimo = User.anonimo();
+  print(anonimo);
 }
